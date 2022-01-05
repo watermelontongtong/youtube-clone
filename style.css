@@ -1,0 +1,253 @@
+:root {
+  /* Color */
+  --blue: #4185de;
+  --red: #ff0000;
+  --black: #212121;
+  --white: #f9f9f9;
+  --dark-grey: #606060;
+  /* Padding */
+  --padding: 16px;
+  /* Size */
+  --font-big: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+/*Header*/
+header {
+  background-color: var(--black);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: calc(var(--padding) / 1.5) var(--padding);
+}
+
+header .logo {
+  font-size: var(--font-big);
+}
+
+header .logo i {
+  color: var(--red);
+}
+
+header .items i {
+  margin-left: 10px;
+}
+
+/*Player*/
+.player {
+  text-align: center;
+  background-color: var(--black);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.player video {
+  width: 100%;
+  max-width: 800px;
+}
+
+/*Metadata*/
+/*Info*/
+.metadata {
+  padding: calc(var(--padding) / 1.5) var(--padding);
+}
+
+.metadata .info .hashtags {
+  display: flex;
+  color: var(--blue);
+  margin-bottom: 3px;
+}
+
+.metadata .info .hashtags li {
+  margin-right: 5px;
+  font-size: var(--font-small);
+}
+
+.metadata .info .title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.metadata .info .title .title {
+  font-size: var(--font-medium);
+  width: 95%;
+}
+
+.metadata .info .title .active {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.metadata .info .title button {
+  height: 100%;
+  color: var(--dark-grey);
+}
+
+.metadata .info .title .clicked {
+  transform: rotate(180deg);
+}
+
+.metadata .info .views {
+  color: var(--dark-grey);
+  font-size: var(--font-small);
+}
+
+/*Icons*/
+.metadata .icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.metadata .icons .icon button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--dark-grey);
+}
+
+.metadata .icons .icon button i {
+  font-size: var(--font-big);
+}
+
+.metadata .icons .icon button span {
+  margin-top: 8px;
+  font-size: var(--font-small);
+}
+
+.metadata .icons .icon button i:hover {
+  color: var(--blue);
+}
+
+/*Channel*/
+.metadata .channel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.metadata .channel .info {
+  display: flex;
+  align-items: center;
+}
+
+.metadata .channel .info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.metadata .channel .info .detail .title {
+  font-size: var(--font-medium);
+  margin: 0;
+}
+
+.metadata .channel .info .detail .subscribers {
+  font-size: var(--font-small);
+  color: var(--dark-grey);
+}
+
+.metadata .channel .subscribe {
+  color: var(--red);
+  font-size: var(--font-medium);
+}
+
+/*Nextup*/
+.nextUp {
+  padding: 0px var(--padding);
+}
+
+.nextUp li {
+  display: flex;
+}
+
+.nextUp .info {
+  display: flex;
+}
+.nextUp .info img {
+  width: 100%;
+}
+.nextUp .info .image {
+  flex: 1 1 35%;
+}
+
+.nextUp .info .detail {
+  flex: 1 1 60%;
+}
+
+.nextUp .info i {
+  flex: 1 1 5%;
+}
+
+.nextUp .detail {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px;
+}
+
+.nextUp .detail span:first-child {
+  font-size: var(--font-medium);
+  margin-bottom: 3px;
+}
+
+.nextUp .detail span:nth-child(2),
+.nextUp .detail span:last-child {
+  font-size: var(--font-small);
+  color: var(--dark-grey);
+}
+
+.nextUp i {
+  color: var(--dark-grey);
+  padding-top: 8px;
+}
+
+.big-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 800px) {
+  .big-screen {
+    flex-direction: row;
+  }
+
+  .metadata {
+    flex: 1 1 50%;
+  }
+
+  .nextUp {
+    margin: var(--padding);
+    flex: 1 1 50%;
+  }
+}
